@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpg" />
+    <title>Final</title>
+</head>
+<body>
+    <section class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="logo.jpg">
+		</div>
+        <div class="sidemenus">
+            <a class="active" href="index.html">INICIO</a>
+            <a href="#">Visualisar</a>
+            <a href="#">Subir</a>
+            <div class="sidecaja">
+                <button class="sidebotom">More</button>
+                <div class="sidecontem">
+                    <a href="#">Visualisar</a>
+                    <a href="#">Subir</a>
+                    <a href="#">Ingresar</a>
+                </div>
+            </div>
+            <label class="switch">
+                <input class="botondarks" type="checkbox">
+                <span class="desliceswitch"></span>
+            </label>
+        </div>
+    </section>    
+</body>
+</html>
+
+
+<style>
+    :root{
+        --fondo:#d3e6dd;
+        --letras:#000000;
+        --letrasactivas:#0dd1eb;
+        --active:#000000;
+        --barra:#ffffff;
+        --switchcolor:#000000;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-size: 28px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--fondo);
+        animation-name: animeinicio;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    body.dark{
+        --letras: #000000;
+        --letrasactivas:#d6d6d6;
+        --active:#000000;
+        --barra:#ffffff;
+
+        --fondocaja:#ffffff;
+    }
+    /*GRANDE*/
+    @media (min-width: 750px){
+        .sidebar .logo { 
+            width: auto;      
+            overflow: hidden;
+            
+        }
+        .sidebar .logo img{ 
+            width:60px;        
+            overflow: hidden;
+        }
+        .sidemenus{
+            position: relative;
+            width: auto;
+            top: 20px;
+            height: 45%;
+        }
+        .sidebar {
+            overflow: hidden;
+            background: var(--barra);
+            z-index: 100;
+            display: flex;
+            margin: auto;
+            
+        }
+        
+        .sidemenus a {
+            float: left;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            background: var(--barra);
+            text-decoration: none;
+            
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 15px;
+            list-style: none;
+            color: var(--letras);
+            
+            }
+        
+        .sidemenus a:hover {
+            color: var(--letrasactivas);
+            background: var(--active);
+        }
+        
+        .sidemenus a.active {
+            background: var(--active);
+            color: var(--letrasactivas)
+        }
+        /*BARRA CONTEM*/
+        .sidebotom {
+            border: none;
+            float: left;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            background: var(--barra);
+            text-decoration: none;
+            
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 15px;
+            list-style: none;
+            color: var(--letras);
+            cursor: pointer;
+        }
+        
+        .sidebotom:hover {
+            background: var(--active);
+            color: var(--letrasactivas);
+        }
+        .sidecontem{
+            display: none;
+            position: fixed;
+            background: var(--caja);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            color: var(--letrasactivas);        
+            background: #000000;
+        }
+        
+        .sidecontem a {
+            float: none;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            
+        }
+        
+        .sidecontem a:hover {
+            background: var(--active);
+        }
+        .sidecaja{
+            height: auto;
+            float: left;
+            display: block;
+            color: var(--letras);
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .sidecaja:hover .sidecontem {
+            display: block;
+        }
+        /*CAMBIO*/
+        .switch {
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+            
+        }
+
+        .desliceswitch {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--active);
+            
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .desliceswitch:before {
+            border-radius: 50%;
+        }
+
+        .desliceswitch:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background: var(--barra);
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .desliceswitch {
+            background: var(--active);
+        }
+
+        input:focus + .desliceswitch {
+            background: var(--active);
+        }
+
+        input:checked + .desliceswitch:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+
+    }
+    /*PEQUEÑO*/
+    @media (max-width: 750px){}
+
+    /*animationx*/
+    @keyframes animeinicio{
+        from{
+            opacity: 0;
+            background: black;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    const Modooscuro = document.querySelector('.botondarks');
+    Modooscuro.addEventListener('change', function () {
+        if(this.checked) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+    })
+</script>
