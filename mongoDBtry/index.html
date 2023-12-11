@@ -29,6 +29,9 @@
     </section>    
     <section class="cajon">
         <div class="cajaupdate">
+            <div class="cajalogo">
+                <img class="flipjorge" src="ftrans.png" alt="">
+            </div>
         </div>
 
     </section>
@@ -39,35 +42,47 @@
 </html>
 <style>
     :root{
-        --fondo:#d3e6dd;
+        --fondo:#020202;
         --letras:#000000;
         --letrasactivas:#0dd1eb;
         --active:#000000;
         --barra:#ffffff;
         --switchcolor:#000000;
+        --flipjorge: url(FB_IMG_1685549600282.png);
     }
-    * {
-        box-sizing: border-box;
+    .flipjorge{
+        background: var(--flipjorge);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        height: 300px;
     }
-    body {
-        margin: 0;
-        font-size: 28px;
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--fondo);
-        animation-name: animeinicio;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-    }
-    body.dark{
-        --letras: #000000;
-        --letrasactivas:#d6d6d6;
-        --active:#000000;
-        --barra:#ffffff;
-
-        --fondocaja:#ffffff;
-    }
+    
     /*GRANDE*/
     @media (min-width: 750px){
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fondo);
+            animation-name: animeinicio;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            background: linear-gradient(to right, #000000,#000000,#000000, #000b1a, #001228);
+        }
+        body.dark{
+            --letras: #000000;
+            --letrasactivas:#d6d6d6;
+            --active:#000000;
+            --barra:#ffffff;
+
+            --fondocaja:#ffffff;
+            --flipjorge: url(FB_IMG_1685549600282DARK.png);
+            background: linear-gradient(to right, #001228,#000b1a,#000000, #000000, #000000);
+        }
         .sidebar .logo { 
             width: auto;      
             overflow: hidden;
@@ -249,26 +264,59 @@
 
         /*CAJON*/
         .cajon{
-            background: #fd0202;
             width: 90%;
-            height: auto;
+            height: 500px;
             position: relative;
+            
+            
             left: 5%;
             top: 0px;
         }
         .cajaupdate{            
-            background: blue;
             width: 90%;
-            height: auto;
+            height: 100%;
             position: relative;
-            left: 5%;
-            top: 0px;
+            left: 0%;
+            top: 40px;
+            
+            
+        }
+        .cajalogo{
+            position: relative;
+            left: 33%;
+            width: 50%;
+            height: 100%;
+            
+        }
+        .cajalogo img{
+            width: 70%;
         }
 
 
     }
     /*PEQUEÑO*/
     @media (max-width: 750px){
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fondo);
+            animation-name: animeinicio;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            background: linear-gradient(to right, #000000,#000000,#000000, #001228);
+        }
+        body.dark{
+            --letras: #000000;
+            --letrasactivas:#d6d6d6;
+            --active:#000000;
+            --barra:#ffffff;
+
+            --fondocaja:#ffffff;
+        }
         .sidebar .logo { 
             width: auto;      
             overflow: hidden;
@@ -455,76 +503,45 @@
 
         /*CAJON*/
         .cajon{
-            background: #fd0202;
             width: 90%;
-            height: auto;
+            height: 600px;
             position: relative;
             left: 5%;
             top: 0px;
         }
         .cajaupdate{            
-            background: blue;
-            width: 90%;
-            height: auto;
+            width: 100%;
+            height: 100%;
             position: relative;
-            left: 5%;
-            top: 0px;
+            left: 0%;
+            top: 40px;           
+            
         }
-        /*subir */
-
-        input[type=file]::file-selector-button {
-            margin-right: 20px;
-            border: none;
-            background: #084cdf;
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: #fff;
-            cursor: pointer;
-            transition: background .2s ease-in-out;
-        }
-
-        input[type=file]::file-selector-button:hover {
-            background: #0d45a5;
-        }
-        .imgcontenedor {
-            background: white;
+        .cajalogo{
             position: relative;
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px dashed #555;
-            color: #444;
-            cursor: pointer;
-            transition: background .2s ease-in-out, border .2s ease-in-out;
+            left: 0%;
+            top: 20%;
+            width: 100%;
+            height: 80%;
+            
         }
-        .imgcontenedor:hover {
-            background: #eee;
-            border-color: #111;
+        .cajalogo img{
+            width: 100%;
         }
-
-        .imgcontenedor:hover .contenedortitulo {
-            color: #222;
-        }
-
-        .contenedortitulo {
-            color: #444;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            transition: color .2s ease-in-out;
-        }
+        
     }
 
     /*animationx*/
     @keyframes animeinicio{
         from{
             opacity: 0;
-            background: black;
+            background: url(charger2.gif);
+            
+            
+        }
+        98%{
+            opacity: 0;
+            background: url(charger2.gif);
         }
         to{
             opacity: 1;
