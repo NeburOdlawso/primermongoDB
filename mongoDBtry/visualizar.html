@@ -32,8 +32,14 @@
         <div class="cajavisualizar">
             <div class="cajapaquete">
                 <center>
-                <div class="nambre" id="nambre">ejemplo</div>                
+                <div class="nambre" id="nambre">ejemplo1</div>                
                 <div class="imagenes" id="imagenes"><img src="jjspider.jpg" alt=""></div>
+                </center>
+            </div>
+            <div class="cajapaquete">
+                <center>
+                <div class="nambre" id="nambre">ejemplo2</div>                
+                <div class="imagenes" id="imagenes"><img src="img2.jpg" alt=""></div>
                 </center>
             </div>
             
@@ -53,6 +59,7 @@
         --active:#000000;
         --barra:#ffffff;
         --switchcolor:#000000;
+        --cajacolor: #ffffff;
     }
     * {
         box-sizing: border-box;
@@ -257,15 +264,15 @@
 
         /*CAJON*/
         .cajon{
-            background: rgb(34, 106, 128);
+            background: var(--cajacolor);
             width: 90%;
             height: auto;
             position: relative;
             left: 5%;
             top: 0px;
         }
-        .cajavisualizar{            
-            background: blue;
+        .cajavisualizar{         
+            background: #777777;
             width: 90%;
             height: auto;
             position: relative;
@@ -277,10 +284,9 @@
             left: 5%;
             height: auto;
             width: 90%;
-            background: rebeccapurple;
         }
         .cajapaquete img{
-            width: 500px;
+            width: 80%;
             height: auto;
         }
 
@@ -310,7 +316,7 @@
             z-index: 100;
             display: flex;
             margin: auto;
-            height: 100px;
+            height: 80px;
             
         }
         
@@ -474,7 +480,7 @@
 
         /*CAJON*/
         .cajon{
-            background: rgb(34, 106, 128);
+            background: var(--cajacolor);
             width: 90%;
             height: auto;
             position: relative;
@@ -482,7 +488,7 @@
             top: 0px;
         }
         .cajavisualizar{            
-            background: rgb(16, 16, 110);
+            background: #777777;
             width: 90%;
             height: auto;
             position: relative;
@@ -494,7 +500,6 @@
             left: 5%;
             height: auto;
             width: 90%;
-            background: rebeccapurple;
         }
         .cajapaquete img{
             width: 100%;
